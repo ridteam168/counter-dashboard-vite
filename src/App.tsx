@@ -32,8 +32,7 @@ function CountUp({ end, duration = 2000 }: CountUpProps) {
     let startValue;
     
     if (isFirstRender) {
-      // Pada render pertama, selalu mulai dari 9999
-      startValue = 999;
+      startValue = 100;
       setIsFirstRender(false);
     } else {
       // Pada render berikutnya, mulai dari nilai sebelumnya
@@ -105,8 +104,7 @@ function App() {
   // Create a reusable fetch function
   const fetchData = useCallback(async () => {
     try {
-      // const response = await fetch('https://script.google.com/macros/s/AKfycby1LwifpWCYrKKNTK-2H7ehBBCX8HkoQ3Qw2OurCOsodzUXVkkACh__ySu_jV50E2lYIQ/exec?action=read');
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwFnptnVuNadE306rzbD0PsVgfaPgiTaczWo4B0fcvbiMQWFSez-ubZWCR2J77167VkLw/exec?action=read');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}?action=read`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
