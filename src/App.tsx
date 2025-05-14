@@ -49,7 +49,7 @@ function CountUp({ end, duration = 2000 }: CountUpProps) {
     }
     
     // Hitung step dan jalankan animasi
-    const stepTime = 20; // Update setiap 20ms
+    const stepTime = 10;
     const steps = duration / stepTime;
     const stepValue = (startValue - end) / steps;
     let current = startValue;
